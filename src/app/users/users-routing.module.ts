@@ -7,34 +7,27 @@ import { UsersLoginComponent }    from './components/users-login.component';
 import { UsersRegisterComponent } from './components/users-register.component';
 import { UsersForgotComponent }   from './components/users-forgot.component';
 
-const routes: Routes = [
-  //{ path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', component: UsersLoginComponent },
-  { path: 'register', component: UsersRegisterComponent },
-  { path: 'forgot', component: UsersForgotComponent },
+import { AuthGuard } from './../_helpers/auth.guard';
+
+const user_routes: Routes = [
+  {
+      //path: '', component: UsersComponent,
+      path: 'users/login', component: UsersLoginComponent,
+      children: [
+          { path: 'login', component: UsersLoginComponent },
+          { path: 'register', component: UsersRegisterComponent },
+          { path: 'forgot', component: UsersForgotComponent },
+      ]
+  }
 ];
 
-const users_routes: Routes = [
-  { path: '', redirectTo: 'users/login', pathMatch: 'full' },
-  {
-    path: 'users/',
-    component: UsersComponent,
-    children: [
-      {
-        path: 'login',
-        component: UsersLoginComponent,
-      },
-      {
-        path: 'register',
-        component: UsersRegisterComponent,
-      },
-      {
-        path: 'forgot',
-        component: UsersForgotComponent,
-      }
-    ],
-  },
+const routes: Routes = [
+	{ path: ''	        , component: UsersComponent , canActivate: [AuthGuard] },	
+	{ path: 'login'	    , component: UsersLoginComponent },	
+	{ path: 'register'	, component: UsersRegisterComponent },	
+	{ path: 'forgot'	  , component: UsersForgotComponent },	
 ];
+
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
