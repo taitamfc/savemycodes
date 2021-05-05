@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 //custom modules
+import { ElementsModule }  from './elements/elements.module';
 import { HomeModule } from './home/home.module';
 import { UsersModule } from './users/users.module';
 
@@ -19,6 +20,7 @@ import { UsersModule } from './users/users.module';
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
+    ElementsModule,
     HomeModule,
     UsersModule
   ],

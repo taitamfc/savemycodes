@@ -34,13 +34,14 @@ export class UsersLoginComponent implements OnInit {
         password: ['', Validators.required]
     });
 
-    this.returnUrl = this._activatedRouteService.snapshot.queryParams['returnUrl'] || '/';
+    this.returnUrl = this._activatedRouteService.snapshot.queryParams['returnUrl'] || '/users';
   }
   // convenience getter for easy access to form fields
   get f() { return this.form.controls; }
 
   onSubmit() { 
     this.submitted = true;
+    this.loading = true;
 
     // stop here if form is invalid
     console.log(this.form.invalid);

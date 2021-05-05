@@ -11,6 +11,8 @@ import { UsersLoginComponent }    from './components/users-login.component';
 import { UsersRegisterComponent } from './components/users-register.component';
 import { UsersForgotComponent }   from './components/users-forgot.component';
 
+import { ElementsModule }  from './../elements/elements.module';
+import { TreeModule } from '@circlon/angular-tree-component';
 
 
 @NgModule({
@@ -23,11 +25,17 @@ import { UsersForgotComponent }   from './components/users-forgot.component';
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    ElementsModule,
     UsersRoutingModule,
-    FormsModule
+    FormsModule,
+    TreeModule
   ],
   providers: [
     UserService
+  ],
+  exports:[
+    ElementsModule,
+    TreeModule
   ]
 })
 export class UsersModule { }
