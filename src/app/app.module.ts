@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { ElementsModule }  from './elements/elements.module';
 import { HomeModule } from './home/home.module';
 import { UsersModule } from './users/users.module';
+import { FilesModule } from './files/files.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { UsersModule } from './users/users.module';
     AppRoutingModule,
     ElementsModule,
     HomeModule,
-    UsersModule
+    UsersModule,
+    FilesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

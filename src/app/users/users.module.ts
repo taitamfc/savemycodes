@@ -3,6 +3,8 @@ import { CommonModule }           from '@angular/common';
 import { FormsModule }            from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { CodemirrorModule } from '@ctrl/ngx-codemirror';
+
 import { UsersRoutingModule }     from './users-routing.module';
 import { UserService }            from './services/user.service';
 
@@ -12,15 +14,15 @@ import { UsersRegisterComponent } from './components/users-register.component';
 import { UsersForgotComponent }   from './components/users-forgot.component';
 
 import { ElementsModule }  from './../elements/elements.module';
-import { TreeModule } from '@circlon/angular-tree-component';
-
+import { HighlightDirective } from './../_directives/highlight.directive';
 
 @NgModule({
   declarations: [
     UsersComponent,
     UsersLoginComponent,
     UsersRegisterComponent,
-    UsersForgotComponent
+    UsersForgotComponent,
+    HighlightDirective 
   ],
   imports: [
     CommonModule,
@@ -28,14 +30,15 @@ import { TreeModule } from '@circlon/angular-tree-component';
     ElementsModule,
     UsersRoutingModule,
     FormsModule,
-    TreeModule
+    CodemirrorModule,
+    //HighlightDirective
   ],
   providers: [
     UserService
   ],
   exports:[
     ElementsModule,
-    TreeModule
+    //HighlightDirective
   ]
 })
 export class UsersModule { }
