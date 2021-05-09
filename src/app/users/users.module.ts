@@ -12,6 +12,8 @@ import { UsersComponent }         from './components/users.component';
 import { UsersLoginComponent }    from './components/users-login.component';
 import { UsersRegisterComponent } from './components/users-register.component';
 import { UsersForgotComponent }   from './components/users-forgot.component';
+import { UsersProfileComponent }   from './components/users-profile.component';
+import { UsersAccountComponent }   from './components/users-account.component';
 
 import { ElementsModule }  from './../elements/elements.module';
 import { HighlightDirective } from './../_directives/highlight.directive';
@@ -22,6 +24,8 @@ import { HighlightDirective } from './../_directives/highlight.directive';
     UsersLoginComponent,
     UsersRegisterComponent,
     UsersForgotComponent,
+    UsersProfileComponent,
+    UsersAccountComponent,
     HighlightDirective 
   ],
   imports: [

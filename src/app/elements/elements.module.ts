@@ -4,7 +4,7 @@ import { CommonModule }           from '@angular/common';
 import { ElementsSidebarComponent } from './sidebar/sidebar.component';
 import { ElementsHeaderComponent } from './header/header.component';
 
-
+import { RouterModule, Routes } from '@angular/router';
 
 
 @NgModule({
@@ -13,7 +13,8 @@ import { ElementsHeaderComponent } from './header/header.component';
     ElementsHeaderComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     ElementsSidebarComponent,
